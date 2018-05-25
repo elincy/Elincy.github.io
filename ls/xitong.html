@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" onclick="init(event)">
+ <head>
+ 
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+ <title>点击出现玫瑰花</title>
+  <script type="text/javascript">
+  /*点出满天星星
+	1、当onclick事件发生时（点击html）去显示一颗星星
+  */
+ function init(e)
+ {
+	//创建图片
+	var imgObj=document.createElement("img");
+	//追加<body>
+	document.body.appendChild(imgObj);
+	//增加src属性
+	imgObj.src="../img/123.png"
+	//增加width属性
+	var width=getRandom(15,85);
+	imgObj.width=width;
+	//增加style属性
+	var x=e.clientX;
+	var y=e.clientY;
+	imgObj.style.position="absolute";
+	imgObj.style.left=x-width/2+"px";
+	imgObj.style.top=y-width/2+"px";
+
+ }
+function getRandom(min,max)
+{
+	var random=Math.random()*(max-min)+min;
+	random=Math.floor(random);
+	return random;
+
+}
+
+  </script>
+ </head>
+
+ <body bgColor="#ffffff">
+  <h3 align="center">点击会有奇迹哦<h3>
+ </body>
+</html>
